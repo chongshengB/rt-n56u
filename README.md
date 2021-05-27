@@ -146,3 +146,41 @@ fakeroot ./build_firmware_modify PSG1218
 * 汉化字典来自：https://github.com/gorden5566/padavan
 * hanwckf更新日志：https://www.jianshu.com/p/d76a63a12eae
 
+
+{
+  "v": "2",
+  "ps": "Singapore②",
+  "add": "52.81.000.000",
+  "port": "30002",
+  "id": "8A5B5082-0216-D2A3-BA59-73BEC6BA78B7",
+  "aid": "0",
+  "net": "tcp",
+  "type": "none",
+  "host": "Singapore-digitaloceanbbb",
+  "path": "",
+  "tls": "tls",
+  "sni": ""
+}
+
+
+
+# VMess + TCP，不加密（仅作示例，不安全）
+vmess://99c80931-f3f1-4f84-bffd-6eed6030f53d@qv2ray.net:31415?encryption=none#VMessTCPNaked
+# VMess + TCP，自动选择加密。编程人员特别注意不是所有的 URL 都有问号，注意处理边缘情况。
+vmess://f08a563a-674d-4ffb-9f02-89d28aec96c9@qv2ray.net:9265#VMessTCPAuto
+# VMess + TCP，手动选择加密
+vmess://5dc94f3a-ecf0-42d8-ae27-722a68a6456c@qv2ray.net:35897?encryption=aes-128-gcm#VMessTCPAES
+# VMess + TCP + TLS，内层不加密
+vmess://136ca332-f855-4b53-a7cc-d9b8bff1a8d7@qv2ray.net:9323?encryption=none&security=tls#VMessTCPTLSNaked
+# VMess + TCP + TLS，内层也自动选择加密
+vmess://be5459d9-2dc8-4f47-bf4d-8b479fc4069d@qv2ray.net:8462?security=tls#VMessTCPTLS
+# VMess + TCP + TLS，内层不加密，手动指定 SNI
+vmess://c7199cd9-964b-4321-9d33-842b6fcec068@qv2ray.net:64338?encryption=none&security=tls&sni=fastgit.org#VMessTCPTLSSNI
+# VLESS + TCP + XTLS
+vless://b0dd64e4-0fbd-4038-9139-d1f32a68a0dc@qv2ray.net:3279?security=xtls&flow=rprx-xtls-splice#VLESSTCPXTLSSplice
+# VLESS + mKCP + Seed
+vless://399ce595-894d-4d40-add1-7d87f1a3bd10@qv2ray.net:50288?type=kcp&seed=69f04be3-d64e-45a3-8550-af3172c63055#VLESSmKCPSeed
+# VLESS + mKCP + Seed，伪装成 Wireguard
+vless://399ce595-894d-4d40-add1-7d87f1a3bd10@qv2ray.net:41971?type=kcp&headerType=wireguard&seed=69f04be3-d64e-45a3-8550-af3172c63055#VLESSmKCPSeedWG
+# VMess + WebSocket + TLS
+vmess://44efe52b-e143-46b5-a9e7-aadbfd77eb9c@qv2ray.net:6939?type=ws&security=tls&host=qv2ray.net&path=%2Fsomewhere#VMessWebSocketTLS
